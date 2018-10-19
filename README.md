@@ -19,19 +19,19 @@ print(headline)
 
 switch theInput2 {
 case "Monday":
-    print("Monday Tuesday  Wednesday Thursday Friday Saturday Sunday \n  1       2        3        4        5       6       7\n  8       9        10       11       12      13      14\n  15      16       17       18       19      20      21\n  22      23       24       25       26      27      28\n  29      30       31")
+    print("Mon\tTue\tWed\tThu\tFri\tSat\tSun\n1\t2\t3\t4\t5\t6\t7\n8\t9\t10\t11\t12\t13\t14\n15\t16\t17\t18\t19\t20\t21\n22\t23\t24\t25\t26\t27\t28\n29\t30\t31")
 case "Tuesday":
-    print("Monday Tuesday  Wednesday Thursday Friday Saturday Sunday \n          1        2        3        4        5       6\n  7       8        9        10       11       12      13\n  14      15       16       17       18       19      20\n  21      22       23       24       25       26      27\n  28      29       30       31")
+    print("Mon\tTue\tWed\tThu\tFri\tSat\tSun\n\0\t1\t2\t3\t4\t5\t6\n7\t8\t9\t10\t11\t12\t13\n14\t15\t16\t17\t18\t19\t20\n21\t22\t23\t24\t25\t26\t27\n28\t29\t30\t31")
 case "Wednesday":
-    print("Monday Tuesday  Wednesday Thursday Friday Saturday Sunday \n                    1        2       3        4       5\n  6       7         8        9       10       11      12\n  13      14        15       16      17       18      19\n  20      21        22       23      24       25      26 \n  27      28        29       30      31")
+    print("Mon\tTue\tWed\tThu\tFri\tSat\tSun\n\0\t\0\t1\t2\t3\t4\t5\n6\t7\t8\t9\t10\t11\t12\n13\t14\t15\t16\t17\t18\t19\n20\t21\t22\t23\t24\t25\t26\n27\t28\t29\t30\t31")
 case "Thursday":
-    print("Monday Tuesday  Wednesday Thursday Friday Saturday Sunday \n                             1       2       3       4\n  5       6        7         8       9       10      11\n  12      13       14        15      16      17      18\n  19      20       21        22      23      24      25\n  26      27       28        29      30      31")
+    print("Mon\tTue\tWed\tThu\tFri\tSat\tSun\n\0\t\0\t\0\t1\t2\t3\t4\n5\t6\t7\t8\t9\t10\t11\n12\t13\t14\t15\t16\t17\t18\n19\t20\t21\t22\t23\t24\t25\n26\t27\t28\t29\t30\t31")
 case "Friday":
-    print("Monday Tuesday  Wednesday Thursday Friday Saturday Sunday \n                                     1       2       3\n  4       5        6         7       8       9       10\n  11      12       13        14      15      16      17\n  18      19       20        21      22      23      24\n  25      26       27        28      29      30      31")
+    print("Mon\tTue\tWed\tThu\tFri\tSat\tSun\n\0\t\0\t\0\t\0\t1\t2\t3\n4\t5\t6\t7\t8\t9\t10\n11\t12\t13\t14\t15\t16\t17\n18\t19\t20\t21\t22\t23\t24\n25\t26\t27\t28\t29\t30\t31")
 case "Saturday":
-    print("Monday Tuesday  Wednesday Thursday Friday Saturday Sunday \n                                             1       2\n  3       4         5        6       7       8       9\n  10      11        12       13      14      15      16\n  17      18        19       20      21      22      23\n  24      25        26       27      28      29      30\n  31")
+    print("Mon\tTue\tWed\tThu\tFri\tSat\tSun\n\0\t\0\t\0\t\0\t\0\t1\t2\n3\t4\t5\t6\t7\t8\t9\n10\t11\t12\t13\t14\t15\t16\n17\t18\t19\t20\t21\t22\t23\n24\t25\t26\t27\t28\t29\t30\n31")
 case "Sunday":
-    print("Monday Tuesday  Wednesday Thursday Friday Saturday Sunday \n                                                      1\n  2       3         4         5       6       7       8\n  9       10        11        12      13      14      15\n  16      17        18        19      20      21      22\n  23      24        25        26      27      28      29\n  30      31")
+    print("Mon\tTue\tWed\tThu\tFri\tSat\tSun\n\0\t\0\t\0\t\0\t\0\t\0\t1\n2\t3\t4\t5\t6\t7\t8\n9\t10\t11\t12\t13\t14\t15\n16\t17\t18\t19\t20\t21\t22\n23\t24\t25\t26\t27\t28\t29\n30\t31")
 default:
     print("Not true! Please check your answer.")
 }
