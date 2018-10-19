@@ -1,4 +1,3 @@
-# ios-calander
 //
 //  main.swift
 //  自强
@@ -9,14 +8,14 @@
 
 
 //输入某年的年份及一月一日是周几，能够打印出该年一月的月历
-
 import Foundation
 
 print("Please input a year：")
 let theInput1 = readLine()
 print("What day is Jan 1st in this year：")
 let theInput2 = readLine()
-
+let headline = "\n\n January, \(theInput1!) is as followed:\n"
+print(headline)
 
 switch theInput2 {
 case "Monday":
@@ -37,8 +36,34 @@ default:
     print("Not true! Please check your answer.")
 }
 
+var dates = 1
+var n = 0
+var i = 0
+for dates in 1...365 {
+    for n in 1...9999 {
+        if dates == 7*n {
+            i += 1
+        }
+    }
+}
 
+let j = i + 1
+let theInput3 = Int(theInput1!)
+if theInput3 == 4*n {
+    switch theInput2 {
+    case "Sunday","Saturday":
+        print("\n\n\n There are \(j) Sundays in \(theInput1!)")
+    default:
+        print("\n\n\n There are \(i) Sundays in \(theInput1!)")
+    }
 
-
-
+}
+else {
+    switch theInput2 {
+    case "Sunday":
+        print("\n\n\n There are \(j) Sundays in \(theInput1!)")
+    default:
+        print("\n\n\n There are \(i) Sundays in \(theInput1!)")
+    }
+}
 
