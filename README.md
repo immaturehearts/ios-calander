@@ -10,32 +10,80 @@
 //输入某年的年份及一月一日是周几，能够打印出该年一月的月历
 import Foundation
 
-print("Please input a year：")
-let theInput1 = readLine()
-print("What day is Jan 1st in this year：")
-let theInput2 = readLine()
-let headline = "\n\n January, \(theInput1!) is as followed:\n"
-print(headline)
-
-switch theInput2 {
-case "Monday":
-    print("Mon\tTue\tWed\tThu\tFri\tSat\tSun\n1\t2\t3\t4\t5\t6\t7\n8\t9\t10\t11\t12\t13\t14\n15\t16\t17\t18\t19\t20\t21\n22\t23\t24\t25\t26\t27\t28\n29\t30\t31")
-case "Tuesday":
-    print("Mon\tTue\tWed\tThu\tFri\tSat\tSun\n\0\t1\t2\t3\t4\t5\t6\n7\t8\t9\t10\t11\t12\t13\n14\t15\t16\t17\t18\t19\t20\n21\t22\t23\t24\t25\t26\t27\n28\t29\t30\t31")
-case "Wednesday":
-    print("Mon\tTue\tWed\tThu\tFri\tSat\tSun\n\0\t\0\t1\t2\t3\t4\t5\n6\t7\t8\t9\t10\t11\t12\n13\t14\t15\t16\t17\t18\t19\n20\t21\t22\t23\t24\t25\t26\n27\t28\t29\t30\t31")
-case "Thursday":
-    print("Mon\tTue\tWed\tThu\tFri\tSat\tSun\n\0\t\0\t\0\t1\t2\t3\t4\n5\t6\t7\t8\t9\t10\t11\n12\t13\t14\t15\t16\t17\t18\n19\t20\t21\t22\t23\t24\t25\n26\t27\t28\t29\t30\t31")
-case "Friday":
-    print("Mon\tTue\tWed\tThu\tFri\tSat\tSun\n\0\t\0\t\0\t\0\t1\t2\t3\n4\t5\t6\t7\t8\t9\t10\n11\t12\t13\t14\t15\t16\t17\n18\t19\t20\t21\t22\t23\t24\n25\t26\t27\t28\t29\t30\t31")
-case "Saturday":
-    print("Mon\tTue\tWed\tThu\tFri\tSat\tSun\n\0\t\0\t\0\t\0\t\0\t1\t2\n3\t4\t5\t6\t7\t8\t9\n10\t11\t12\t13\t14\t15\t16\n17\t18\t19\t20\t21\t22\t23\n24\t25\t26\t27\t28\t29\t30\n31")
-case "Sunday":
-    print("Mon\tTue\tWed\tThu\tFri\tSat\tSun\n\0\t\0\t\0\t\0\t\0\t\0\t1\n2\t3\t4\t5\t6\t7\t8\n9\t10\t11\t12\t13\t14\t15\n16\t17\t18\t19\t20\t21\t22\n23\t24\t25\t26\t27\t28\t29\n30\t31")
-default:
-    print("Not true! Please check your answer.")
+func isPurnInt(string: String) -> Bool {
+    
+    let scan: Scanner = Scanner(string: string)
+    
+    var val:Int = 0
+    
+    return scan.scanInt(&val) && scan.isAtEnd
+    
 }
 
+
+print("Please input a year：")
+let theInput1 = readLine()
+
+if isPurnInt(string: theInput1!) {
+}
+else {
+    print("Please input only numbers! Try again.")
+    exit(0)
+}
+
+print("What day is Jan 1st in this year：")
+let theInput2 = readLine()
+let headline = "\n\nJanuary, \(theInput1!) is as followed:\n"
+print(headline)
+
+var a = 0
+switch theInput2 {
+case "Monday","星期一","周一","1","一" :
+    a = 1
+case "Tuesday","星期二","周二","2","二" :
+    a = 2
+case "Wednesday","星期三","周三","3","三" :
+    a = 3
+case "Thursday","星期四","周四","4","四" :
+    a = 4
+case "Friday","星期五","周五","5","五" :
+    a = 5
+case "Saturday","星期六","周六","6","六" :
+    a = 6
+case "Sunday","星期日","星期天","周日","周天","7","日","天" :
+    a = 7
+default:
+    print("Not true! Please check your answer.")
+    exit(0)
+}
+
+//print("Monday\tTuesday\tWednesday\tThursday\tFriday\tSaturday\tSunday")
+print("Mon\t\tTue\t\tWed\t\tThu\t\tFri\t\tSat\t\tSun")
+//let i = 1
+//let str = String(format: "%03d", i)
+
+let f = a - 1
+for _ in 1...f{
+    print("\t\t", terminator: "")
+}
+
+for b in 01...31 {
+    let c = a + b
+    let d:String = String(format: "%02d", b)
+    switch c{
+    case 8,15,22,29,36:
+        print(d)
+    default:
+        print("\(d) ","\t", terminator: "")
+    }
+}
+
+
+
+
+
+
+//计算一年有几个周日
 var dates = 1
 var n = 0
 var i = 0
@@ -47,6 +95,7 @@ for dates in 1...365 {
     }
 }
 
+//考虑到闰年的情况
 let j = i + 1
 let theInput3 = Int(theInput1!)
 if theInput3 == 4*n {
