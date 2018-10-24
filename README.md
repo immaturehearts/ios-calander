@@ -63,9 +63,15 @@ print("Mon\t\tTue\t\tWed\t\tThu\t\tFri\t\tSat\t\tSun")
 //let str = String(format: "%03d", i)
 
 let f = a - 1
-for _ in 1...f{
-    print("\t\t", terminator: "")
+if f == 0 {
+    
 }
+else {
+    for _ in 1...f{
+        print("\t\t", terminator: "")
+    }
+}
+
 
 for b in 01...31 {
     let c = a + b
@@ -77,10 +83,6 @@ for b in 01...31 {
         print("\(d) ","\t", terminator: "")
     }
 }
-
-
-
-
 
 
 //计算一年有几个周日
@@ -101,18 +103,18 @@ let theInput3 = Int(theInput1!)
 if theInput3 == 4*n {
     switch theInput2 {
     case "Sunday","Saturday":
-        print("\n\n\n There are \(j) Sundays in \(theInput1!)")
+        print("\n\n\nThere are \(j) Sundays in \(theInput1!)")
     default:
-        print("\n\n\n There are \(i) Sundays in \(theInput1!)")
+        print("\n\n\nThere are \(i) Sundays in \(theInput1!)")
     }
 
 }
 else {
     switch theInput2 {
     case "Sunday":
-        print("\n\n\n There are \(j) Sundays in \(theInput1!)")
+        print("\n\n\nThere are \(j) Sundays in \(theInput1!)")
     default:
-        print("\n\n\n There are \(i) Sundays in \(theInput1!)")
+        print("\n\n\nThere are \(i) Sundays in \(theInput1!)")
     }
 }
 
